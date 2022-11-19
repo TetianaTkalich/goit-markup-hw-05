@@ -346,7 +346,7 @@ ul {
     margin-bottom: 30px;
     width: 696px;
 
-    color: var(--secondary-white-color);
+    color: var(--primary-text-color);
     font-weight: 900;
     font-size: 44px;
     line-height: calc(60/44);
@@ -385,7 +385,7 @@ ul {
     width: 528px;
     height: 581px;
 
-    background-color: var(--secondary-white-color);
+    background-color: var(--primary-text-color);
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -445,6 +445,9 @@ ul {
     line-height: calc(26/16);
     border-radius: 4px;
     border: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
     
 }
@@ -614,6 +617,8 @@ margin-right: 8px;
     align-items: center;
     color: var(--social-color);
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-footer {
@@ -744,7 +749,7 @@ margin-right: 8px;
 
 
 .clients-list .icon{
-    fill: var(--social-color)
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .clients-link:hover,
@@ -767,10 +772,14 @@ margin-right: 8px;
     border: 1px solid var(--accent-color);
 }
 
+.clients-list .clients-link {
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
    
 .clients-list {    
-    height: 92px;
-    width: 170px;
+        flex-basis: calc((100% - 150px) / 6);
+        height: 92px;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  
  .social-item:not(:last-child){
@@ -811,6 +820,15 @@ margin-right: 8px;
     display: flex;
     flex-direction: column;
     padding-left: 0;
+}
+
+.footer-contacts .link {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-item {
@@ -909,8 +927,10 @@ margin-right: 8px;
 }
 
 .card {
+    position: relative;
     display: block;
     text-decoration: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .name-project{
@@ -956,10 +976,7 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 0p
 
 }
 
-.name-project {
-    position: relative;
-    overflow: hidden;
-}
+
 
 .overlay {
     position: absolute;
@@ -970,11 +987,11 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 0p
     background-color: rgba(33, 150, 243, 0.9);
     opacity: 0;
     transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.name-project:hover .overlay {
+.project-item:hover .overlay {
     transform: translateY(0);
     opacity: 1;
 
